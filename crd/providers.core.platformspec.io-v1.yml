@@ -36,6 +36,7 @@ spec:
                 - registry
                 - secrets
                 - security
+                - server
                 - x-custom
                 type: string
               config:

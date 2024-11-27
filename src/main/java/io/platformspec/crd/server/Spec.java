@@ -1,5 +1,6 @@
 package io.platformspec.crd.server;
 
+import io.fabric8.crd.generator.annotation.PreserveUnknownFields;
 import io.fabric8.generator.annotation.Required;
 import io.fabric8.kubernetes.api.model.ObjectReference;
 import io.platformspec.crd.server.spec.Config;
@@ -19,5 +20,6 @@ public class Spec {
 
     String network;
 
+    @PreserveUnknownFields
     Config config;
 }

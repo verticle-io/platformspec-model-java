@@ -13,4 +13,5 @@ public class Resources {
     List<ObjectReference> images;
     List<ObjectReference> softwareGroups;
     List<ObjectReference> credentials;
+    List<ObjectReference> networks;
 }

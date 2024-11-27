@@ -20,5 +20,8 @@ public enum Categories {
     alerting,       //	Alerting and notification services (e.g., PagerDuty, Opsgenie).
     cluster,        //	Cluster management systems (e.g., Kubernetes on AWS, Azure, GCP).
     @JsonProperty("x-custom")
-    xCustom         //	Placeholder for custom provider categories.
+    xCustom,        //	Placeholder for custom provider categories.
+
+    server          // virtual machine
+
 }

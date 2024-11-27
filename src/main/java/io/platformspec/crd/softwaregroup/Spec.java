@@ -2,7 +2,9 @@ package io.platformspec.crd.softwaregroup;
 
 import io.platformspec.crd.softwaregroup.spec.Packages;
 
+import java.util.List;
+
 public class Spec {
 
-    Packages packages;
+    List<Packages> packages;
 }

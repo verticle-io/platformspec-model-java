@@ -5,15 +5,17 @@ import io.fabric8.generator.annotation.Required;
 import io.fabric8.kubernetes.api.model.ObjectReference;
 import io.platformspec.crd.cluster.spec.Config;
 
+import java.util.List;
+
 public class Spec {
 
     @Required
-    ObjectReference providerRefs;
+    List<ObjectReference> providerRefs;
 
     @Required
     ObjectReference environmentRef;
 
-    ObjectReference softwareGroupRefs;
+    List<ObjectReference> softwareGroupRefs;
 
     @Required
     String version;

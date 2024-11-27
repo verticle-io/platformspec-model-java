@@ -40,41 +40,45 @@ spec:
                   type: string
               type: object
             providerRefs:
-              properties:
-                apiVersion:
-                  type: string
-                fieldPath:
-                  type: string
-                kind:
-                  type: string
-                name:
-                  type: string
-                namespace:
-                  type: string
-                resourceVersion:
-                  type: string
-                uid:
-                  type: string
-              type: object
+              items:
+                properties:
+                  apiVersion:
+                    type: string
+                  fieldPath:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  namespace:
+                    type: string
+                  resourceVersion:
+                    type: string
+                  uid:
+                    type: string
+                type: object
+              type: array
             region:
               type: string
             softwareGroupRefs:
-              properties:
-                apiVersion:
-                  type: string
-                fieldPath:
-                  type: string
-                kind:
-                  type: string
-                name:
-                  type: string
-                namespace:
-                  type: string
-                resourceVersion:
-                  type: string
-                uid:
-                  type: string
-              type: object
+              items:
+                properties:
+                  apiVersion:
+                    type: string
+                  fieldPath:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  namespace:
+                    type: string
+                  resourceVersion:
+                    type: string
+                  uid:
+                    type: string
+                type: object
+              type: array
             version:
               type: string
           required:

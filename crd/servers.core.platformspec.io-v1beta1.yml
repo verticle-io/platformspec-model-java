@@ -21,6 +21,7 @@ spec:
           properties:
             config:
               type: object
+              x-kubernetes-preserve-unknown-fields: true
             environmentRef:
               properties:
                 apiVersion:
@@ -66,6 +67,7 @@ spec:
           - providerRefs
           - region
           type: object
+          x-kubernetes-preserve-unknown-fields: true
         status:
           type: object
       type: object

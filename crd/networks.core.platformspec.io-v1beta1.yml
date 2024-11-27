@@ -42,7 +42,11 @@ spec:
                 type: object
               type: array
             type:
-              type: object
+              enum:
+              - overlay
+              - vpc
+              - vpn
+              type: string
           type: object
           x-kubernetes-preserve-unknown-fields: true
         status:

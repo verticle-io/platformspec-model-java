@@ -42,6 +42,25 @@ spec:
                     driver:
                       type: string
                     software:
+                      properties:
+                        packages:
+                          items:
+                            properties:
+                              name:
+                                type: string
+                              version:
+                                type: string
+                            type: object
+                          type: array
+                        repos:
+                          items:
+                            properties:
+                              name:
+                                type: string
+                              url:
+                                type: string
+                            type: object
+                          type: array
                       type: object
                   type: object
                 default:
@@ -84,6 +103,13 @@ spec:
                         type: string
                     type: object
                   type: array
+                reference:
+                  properties:
+                    id:
+                      type: string
+                    location:
+                      type: string
+                  type: object
                 version:
                   type: string
               type: object
