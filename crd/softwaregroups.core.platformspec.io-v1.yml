@@ -18,6 +18,21 @@ spec:
       openAPIV3Schema:
         properties:
           spec:
+            properties:
+              packages:
+                properties:
+                  config:
+                    type: object
+                    x-kubernetes-preserve-unknown-fields: true
+                  engine:
+                    enum:
+                    - docker
+                    - helm
+                    type: string
+                  name:
+                    type: string
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
             type: object
           status:
             type: object
