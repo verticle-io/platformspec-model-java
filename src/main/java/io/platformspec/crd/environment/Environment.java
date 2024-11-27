@@ -13,6 +13,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("env")
-public class Environment extends CustomResource<io.platformspec.crd.cluster.Spec, Status> implements Namespaced {
+public class Environment extends CustomResource<Spec, Status> implements Namespaced {
 
 }
