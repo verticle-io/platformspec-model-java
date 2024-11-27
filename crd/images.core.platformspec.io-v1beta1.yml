@@ -18,6 +18,75 @@ spec:
     openAPIV3Schema:
       properties:
         spec:
+          properties:
+            category:
+              enum:
+              - container
+              - machine
+              type: string
+            spec:
+              properties:
+                builder:
+                  properties:
+                    config:
+                      properties:
+                        location:
+                          type: string
+                        options:
+                          type: object
+                          x-kubernetes-preserve-unknown-fields: true
+                        target:
+                          type: string
+                      type: object
+                      x-kubernetes-preserve-unknown-fields: true
+                    driver:
+                      type: string
+                    software:
+                      type: object
+                  type: object
+                default:
+                  type: boolean
+                environmentRefs:
+                  items:
+                    properties:
+                      apiVersion:
+                        type: string
+                      fieldPath:
+                        type: string
+                      kind:
+                        type: string
+                      name:
+                        type: string
+                      namespace:
+                        type: string
+                      resourceVersion:
+                        type: string
+                      uid:
+                        type: string
+                    type: object
+                  type: array
+                providerRefs:
+                  items:
+                    properties:
+                      apiVersion:
+                        type: string
+                      fieldPath:
+                        type: string
+                      kind:
+                        type: string
+                      name:
+                        type: string
+                      namespace:
+                        type: string
+                      resourceVersion:
+                        type: string
+                      uid:
+                        type: string
+                    type: object
+                  type: array
+                version:
+                  type: string
+              type: object
           type: object
         status:
           type: object

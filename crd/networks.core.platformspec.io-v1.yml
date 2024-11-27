@@ -18,7 +18,33 @@ spec:
       openAPIV3Schema:
         properties:
           spec:
+            properties:
+              config:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+              providerRefs:
+                items:
+                  properties:
+                    apiVersion:
+                      type: string
+                    fieldPath:
+                      type: string
+                    kind:
+                      type: string
+                    name:
+                      type: string
+                    namespace:
+                      type: string
+                    resourceVersion:
+                      type: string
+                    uid:
+                      type: string
+                  type: object
+                type: array
+              type:
+                type: object
             type: object
+            x-kubernetes-preserve-unknown-fields: true
           status:
             type: object
         type: object

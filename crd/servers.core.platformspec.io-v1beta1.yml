@@ -18,6 +18,53 @@ spec:
     openAPIV3Schema:
       properties:
         spec:
+          properties:
+            config:
+              type: object
+            environmentRef:
+              properties:
+                apiVersion:
+                  type: string
+                fieldPath:
+                  type: string
+                kind:
+                  type: string
+                name:
+                  type: string
+                namespace:
+                  type: string
+                resourceVersion:
+                  type: string
+                uid:
+                  type: string
+              type: object
+            network:
+              type: string
+            providerRefs:
+              items:
+                properties:
+                  apiVersion:
+                    type: string
+                  fieldPath:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  namespace:
+                    type: string
+                  resourceVersion:
+                    type: string
+                  uid:
+                    type: string
+                type: object
+              type: array
+            region:
+              type: string
+          required:
+          - environmentRef
+          - providerRefs
+          - region
           type: object
         status:
           type: object
