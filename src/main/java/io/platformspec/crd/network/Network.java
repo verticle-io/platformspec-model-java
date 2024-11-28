@@ -14,6 +14,6 @@ import io.platformspec.crd.image.Status;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("net")
-public class Network  extends CustomResource<Spec, Status> implements Namespaced {
+public class Network extends CustomResource<Spec, Status> implements Namespaced {
 
 }

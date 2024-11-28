@@ -14,5 +14,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("swg")
-public class SoftwareGroup  extends CustomResource<Spec, Status> implements Namespaced {
+public class SoftwareGroup extends CustomResource<Spec, Status> implements Namespaced {
+
 }

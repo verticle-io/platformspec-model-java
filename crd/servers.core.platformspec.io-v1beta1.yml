@@ -20,7 +20,6 @@ spec:
         spec:
           properties:
             config:
-              type: object
               x-kubernetes-preserve-unknown-fields: true
             environmentRef:
               properties:
@@ -39,8 +38,25 @@ spec:
                 uid:
                   type: string
               type: object
-            network:
-              type: string
+            networkRefs:
+              items:
+                properties:
+                  apiVersion:
+                    type: string
+                  fieldPath:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  namespace:
+                    type: string
+                  resourceVersion:
+                    type: string
+                  uid:
+                    type: string
+                type: object
+              type: array
             providerRefs:
               items:
                 properties:

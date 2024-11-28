@@ -13,7 +13,7 @@ public enum Sources {
     @JsonProperty("aws-ssm")
     aws_ssm,                //	AWS SSM Parameter Store.
     @JsonProperty("aws-secrets")
-aws_secrets,                //	AWS Secrets Manager.
+    aws_secrets,                //	AWS Secrets Manager.
     @JsonProperty("aws-s3")
     aws_s3,                 //	AWS S3.
     @JsonProperty("aws-kms")
@@ -39,5 +39,5 @@ aws_secrets,                //	AWS Secrets Manager.
     @JsonProperty("kubernetes-configmap")
     kubernetes_configmap,   //	Kubernetes Config Map.
     @JsonProperty("kubernetes-secret")
-    kubernetes_secret	    // Kubernetes Secret.
+    kubernetes_secret        // Kubernetes Secret.
 }

@@ -13,5 +13,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("srv")
-public class Server  extends CustomResource<Spec, Status> implements Namespaced {
+public class Server extends CustomResource<Spec, Status> implements Namespaced {
+
 }

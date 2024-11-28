@@ -33,7 +33,6 @@ spec:
                         location:
                           type: string
                         options:
-                          type: object
                           x-kubernetes-preserve-unknown-fields: true
                         target:
                           type: string

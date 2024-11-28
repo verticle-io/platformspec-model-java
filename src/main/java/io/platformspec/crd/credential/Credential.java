@@ -13,6 +13,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("cred")
-public class Credential  extends CustomResource<Spec, Status> implements Namespaced {
+public class Credential extends CustomResource<Spec, Status> implements Namespaced {
 
 }

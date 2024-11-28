@@ -15,5 +15,4 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @ShortNames("cl")
 public class Cluster extends CustomResource<Spec, Status> implements Namespaced {
 
-
 }

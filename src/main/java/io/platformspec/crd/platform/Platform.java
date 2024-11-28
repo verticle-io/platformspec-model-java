@@ -15,5 +15,4 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @ShortNames("pf")
 public class Platform extends CustomResource<Spec, Status> implements Namespaced {
 
-
 }

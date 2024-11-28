@@ -23,7 +23,6 @@ spec:
               items:
                 properties:
                   config:
-                    type: object
                     x-kubernetes-preserve-unknown-fields: true
                   engine:
                     enum:

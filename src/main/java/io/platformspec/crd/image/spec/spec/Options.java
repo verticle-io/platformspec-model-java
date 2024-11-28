@@ -1,4 +1,8 @@
 package io.platformspec.crd.image.spec.spec;
 
-public interface Options {
+import java.util.LinkedHashMap;
+
+public class Options extends LinkedHashMap<String, Object> {
+
 }
+

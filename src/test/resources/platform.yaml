@@ -118,6 +118,7 @@ spec:
     name: aws-creds
   config: {}
 
+---
 apiVersion: core.platformspec.io/v1alpha1
 kind: Provider
 metadata:
@@ -129,6 +130,7 @@ spec:
     name: aws-creds
   config: {}
 
+---
 apiVersion: core.platformspec.io/v1alpha1
 kind: Provider
 metadata:
@@ -150,7 +152,7 @@ metadata:
 spec:
   category: identity
   engine: okta
-  credentialsRef:
+  credentialRef:
     name: okta-creds
   config:
     domain: example.okta.com
@@ -164,7 +166,7 @@ metadata:
 spec:
   category: registry
   engine: harbor
-  credentialsRef:
+  credentialRef:
     name: harbor-creds
   config:
     project: my-project
@@ -179,7 +181,7 @@ metadata:
 spec:
   category: backup
   engine: snapshot
-  credentialsRef:
+  credentialRef:
     name: snapshot-creds
   config: {}
   
@@ -192,7 +194,7 @@ metadata:
 spec:
   category: monitoring
   engine: prometheus
-  credentialsRef: 
+  credentialRef: 
     name: prometheus-creds
   config: {}
 
@@ -205,7 +207,7 @@ metadata:
 spec:
   category: secrets
   engine: vault
-  credentialsRef:
+  credentialRef:
     name: vault-creds
   config: {}
 
@@ -218,7 +220,7 @@ metadata:
 spec:
   category: observability
   engine: grafana
-  credentialsRef:
+  credentialRef:
     name: grafana-creds
   config: {}
 ---
@@ -229,7 +231,7 @@ metadata:
 spec:
   category: observability
   engine: datadog
-  credentialsRef:
+  credentialRef:
     name: datadog-creds
   config: {}
 
@@ -242,7 +244,7 @@ metadata:
 spec:
   category: cicd
   engine: argocd
-  credentialsRef:
+  credentialRef:
     name: argocd-creds
   config: {}
 
@@ -255,7 +257,7 @@ metadata:
 spec:
   category: logging
   engine: elasticsearch
-  credentialsRef:
+  credentialRef:
     name: elasticsearch-creds
   config: {}
 
@@ -268,7 +270,7 @@ metadata:
 spec:
   category: auditing
   engine: splunk
-  credentialsRef:
+  credentialRef:
     name: splunk-creds
   config: {}
 
@@ -281,7 +283,7 @@ metadata:
 spec:
   category: automation
   engine: terraform-atlantis
-  credentialsRef:
+  credentialRef:
     name: terraform-atlantis-creds
   config: {}
 ---
@@ -292,7 +294,7 @@ metadata:
 spec:
   category: automation
   engine: ansible
-  credentialsRef:
+  credentialRef:
     name: ansible-creds
   config: {}
 

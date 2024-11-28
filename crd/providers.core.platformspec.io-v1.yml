@@ -13,7 +13,24 @@ spec:
     singular: provider
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - jsonPath: .spec.category
+      name: category
+      priority: 0
+      type: string
+    - jsonPath: .spec.engine
+      name: engine
+      priority: 0
+      type: string
+    - jsonPath: .status.available
+      name: available
+      priority: 0
+      type: boolean
+    - jsonPath: .status.isProvisioned
+      name: provisioned
+      priority: 0
+      type: boolean
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         properties:
@@ -40,7 +57,6 @@ spec:
                 - x-custom
                 type: string
               config:
-                type: object
                 x-kubernetes-preserve-unknown-fields: true
               credentialRef:
                 properties:
@@ -64,6 +80,15 @@ spec:
             type: object
             x-kubernetes-preserve-unknown-fields: true
           status:
+            properties:
+              available:
+                type: boolean
+              isProvisioned:
+                type: boolean
+              provisionedAt:
+                type: string
+              unprovisionedAt:
+                type: string
             type: object
         type: object
     served: true
