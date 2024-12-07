@@ -3,6 +3,7 @@ package io.platformspec.crd.platform.spec;
 import io.fabric8.kubernetes.api.model.ObjectReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.jackson.Jacksonized;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Jacksonized
+@Data
 public class Resources {
 
     List<ObjectReference> environments;
