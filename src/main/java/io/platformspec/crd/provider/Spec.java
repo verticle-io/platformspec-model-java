@@ -18,6 +18,9 @@ import lombok.extern.jackson.Jacksonized;
 @Data
 public class Spec {
 
+    @PrinterColumn(name = "selector", priority = 0)
+    protected String labelSelector;
+
     @PrinterColumn(name = "category", priority = 0)
     Categories category;
 

@@ -1,12 +1,18 @@
 package io.platformspec.crd.provider;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import io.fabric8.crd.generator.annotation.PreserveUnknownFields;
 import io.fabric8.crd.generator.annotation.PrinterColumn;
+import io.fabric8.kubernetes.api.model.Condition;
+import io.fabric8.kubernetes.api.model.ObjectReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,11 +20,16 @@ import java.time.ZonedDateTime;
 @Builder
 public class Status {
 
-    @PrinterColumn(name = "available", priority = 0)
-    boolean available;
+    @PrinterColumn(name = "claimed by", priority = 0)
+    ObjectReference claimedBy;
 
-    @PrinterColumn(name = "provisioned", priority = 0)
-    boolean isProvisioned = false;
+    @PreserveUnknownFields
+    JsonNode serviceProviderStatus;
+
+    List<Condition> conditions = new ArrayList<>();
+
+    @PrinterColumn(name = "provisioned at", priority = 0)
     ZonedDateTime provisionedAt;
-    ZonedDateTime unprovisionedAt;
+
+
 }

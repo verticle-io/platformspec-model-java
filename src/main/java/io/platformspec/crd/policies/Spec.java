@@ -1,5 +1,6 @@
 package io.platformspec.crd.policies;
 
+import io.fabric8.crd.generator.annotation.PrinterColumn;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,5 +11,9 @@ import lombok.extern.jackson.Jacksonized;
 @Jacksonized
 @Data
 public class Spec {
+
+    @PrinterColumn(name = "selector", priority = 0)
+    protected String labelSelector;
+
     //TODO spec
 }

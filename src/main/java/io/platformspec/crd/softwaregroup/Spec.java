@@ -1,5 +1,6 @@
 package io.platformspec.crd.softwaregroup;
 
+import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.platformspec.crd.softwaregroup.spec.Packages;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,9 @@ import java.util.List;
 @Jacksonized
 @Data
 public class Spec {
+
+    @PrinterColumn(name = "selector", priority = 0)
+    protected String labelSelector;
 
     List<Packages> packages;
 }

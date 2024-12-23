@@ -1,5 +1,6 @@
 package io.platformspec.crd.platform;
 
+import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.fabric8.generator.annotation.Required;
 import io.platformspec.crd.platform.spec.Dns;
 import io.platformspec.crd.platform.spec.Resources;
@@ -15,6 +16,10 @@ import lombok.extern.jackson.Jacksonized;
 @Data
 @Jacksonized
 public class Spec {
+
+    @PrinterColumn(name = "selector", priority = 0)
+    protected String labelSelector;
+
     @Required
     String title;
 
