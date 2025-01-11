@@ -26,6 +26,7 @@
 
     <properties>
         <fabric8.version>6.13.4</fabric8.version>
+        <crd.generator.version>7.0.0</crd.generator.version>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <lombok.version>1.18.34</lombok.version>
@@ -41,7 +42,7 @@
         <dependency>
             <groupId>io.fabric8</groupId>
             <artifactId>crd-generator-apt</artifactId>
-            <version>${fabric8.version}</version>
+            <version>${crd.generator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -89,6 +90,18 @@
                                 </resource>
                             </resources>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>crd-generator-maven-plugin</artifactId>
+                <version>7.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
