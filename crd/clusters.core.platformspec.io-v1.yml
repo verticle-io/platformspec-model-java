@@ -18,6 +18,14 @@ spec:
       name: "selector"
       priority: 0
       type: "string"
+    - jsonPath: ".status.claimedBy"
+      name: "claimed by"
+      priority: 0
+      type: "string"
+    - jsonPath: ".status.provisionedAt"
+      name: "provisioned at"
+      priority: 0
+      type: "string"
     name: "v1alpha1"
     schema:
       openAPIV3Schema:
@@ -113,6 +121,46 @@ spec:
             - "version"
             type: "object"
           status:
+            properties:
+              claimedBy:
+                properties:
+                  apiVersion:
+                    type: "string"
+                  fieldPath:
+                    type: "string"
+                  kind:
+                    type: "string"
+                  name:
+                    type: "string"
+                  namespace:
+                    type: "string"
+                  resourceVersion:
+                    type: "string"
+                  uid:
+                    type: "string"
+                type: "object"
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      type: "string"
+                    message:
+                      type: "string"
+                    observedGeneration:
+                      type: "integer"
+                    reason:
+                      type: "string"
+                    status:
+                      type: "string"
+                    type:
+                      type: "string"
+                  type: "object"
+                type: "array"
+              provisionedAt:
+                format: "date-time"
+                type: "string"
+              serviceProviderStatus:
+                x-kubernetes-preserve-unknown-fields: true
             type: "object"
         type: "object"
     served: true

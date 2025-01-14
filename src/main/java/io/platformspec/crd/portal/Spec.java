@@ -1,8 +1,9 @@
-package io.platformspec.crd.image;
+package io.platformspec.crd.portal;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import io.fabric8.crd.generator.annotation.PreserveUnknownFields;
 import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.platformspec.crd.PlatformResourceSpec;
-import io.platformspec.crd.image.spec.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,6 @@ public class Spec implements PlatformResourceSpec {
     @PrinterColumn(name = "selector", priority = 0)
     protected String labelSelector;
 
-    Category category;
-    io.platformspec.crd.image.spec.Spec spec;
+    @PreserveUnknownFields
+    JsonNode config;
 }

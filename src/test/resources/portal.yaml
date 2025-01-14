@@ -1,0 +1,7 @@
+---
+apiVersion: core.platformspec.io/v1alpha1
+kind: Portal
+metadata:
+  name: backstage
+spec:
+  config: {}

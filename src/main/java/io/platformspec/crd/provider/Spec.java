@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import io.fabric8.crd.generator.annotation.PreserveUnknownFields;
 import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.fabric8.kubernetes.api.model.ObjectReference;
+import io.platformspec.crd.PlatformResourceSpec;
 import io.platformspec.crd.provider.spec.Categories;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +17,7 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 @Data
-public class Spec {
+public class Spec implements PlatformResourceSpec {
 
     @PrinterColumn(name = "selector", priority = 0)
     protected String labelSelector;

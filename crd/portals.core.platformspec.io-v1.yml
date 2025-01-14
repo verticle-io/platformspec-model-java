@@ -2,23 +2,19 @@
 apiVersion: "apiextensions.k8s.io/v1"
 kind: "CustomResourceDefinition"
 metadata:
-  name: "images.core.platformspec.io"
+  name: "portals.core.platformspec.io"
 spec:
   group: "core.platformspec.io"
   names:
-    kind: "Image"
-    plural: "images"
+    kind: "Portal"
+    plural: "portals"
     shortNames:
-    - "img"
-    singular: "image"
+    - "po"
+    singular: "portal"
   scope: "Namespaced"
   versions:
   - additionalPrinterColumns:
     - jsonPath: ".spec.labelSelector"
-      name: "selector"
-      priority: 0
-      type: "string"
-    - jsonPath: ".spec.spec.labelSelector"
       name: "selector"
       priority: 0
       type: "string"
@@ -36,64 +32,10 @@ spec:
         properties:
           spec:
             properties:
-              category:
-                enum:
-                - "container"
-                - "machine"
-                type: "string"
+              config:
+                x-kubernetes-preserve-unknown-fields: true
               labelSelector:
                 type: "string"
-              spec:
-                properties:
-                  builder:
-                    type: "object"
-                  default:
-                    type: "boolean"
-                  environmentRefs:
-                    items:
-                      properties:
-                        apiVersion:
-                          type: "string"
-                        fieldPath:
-                          type: "string"
-                        kind:
-                          type: "string"
-                        name:
-                          type: "string"
-                        namespace:
-                          type: "string"
-                        resourceVersion:
-                          type: "string"
-                        uid:
-                          type: "string"
-                      type: "object"
-                    type: "array"
-                  labelSelector:
-                    type: "string"
-                  providerRefs:
-                    items:
-                      properties:
-                        apiVersion:
-                          type: "string"
-                        fieldPath:
-                          type: "string"
-                        kind:
-                          type: "string"
-                        name:
-                          type: "string"
-                        namespace:
-                          type: "string"
-                        resourceVersion:
-                          type: "string"
-                        uid:
-                          type: "string"
-                      type: "object"
-                    type: "array"
-                  reference:
-                    type: "object"
-                  version:
-                    type: "string"
-                type: "object"
             type: "object"
           status:
             properties:
