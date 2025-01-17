@@ -116,7 +116,7 @@ spec:
   engine: eks
   credentialRef:
     name: aws-creds
-  config: {}
+  config: { }
 
 ---
 apiVersion: core.platformspec.io/v1alpha1
@@ -128,7 +128,7 @@ spec:
   engine: kubeadm
   credentialRef:
     name: aws-creds
-  config: {}
+  config: { }
 
 ---
 apiVersion: core.platformspec.io/v1alpha1
@@ -140,7 +140,7 @@ spec:
   engine: ec2
   credentialRef:
     name: aws-creds
-  config: {}
+  config: { }
 
 
 # ===== Identity Providers =====
@@ -171,7 +171,7 @@ spec:
   config:
     project: my-project
     zone: example-com
-  
+
 # ===== Backup and Disaster Recovery Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
@@ -183,8 +183,8 @@ spec:
   engine: snapshot
   credentialRef:
     name: snapshot-creds
-  config: {}
-  
+  config: { }
+
 # ===== Monitoring Providers =====
 ---
 apiVersion: core.platformspec.io/v1alpha1
@@ -194,9 +194,9 @@ metadata:
 spec:
   category: monitoring
   engine: prometheus
-  credentialRef: 
+  credentialRef:
     name: prometheus-creds
-  config: {}
+  config: { }
 
 # ===== Secret Management Providers =====
 ---
@@ -209,7 +209,7 @@ spec:
   engine: vault
   credentialRef:
     name: vault-creds
-  config: {}
+  config: { }
 
 # ===== Observability Providers =====
 ---
@@ -222,7 +222,7 @@ spec:
   engine: grafana
   credentialRef:
     name: grafana-creds
-  config: {}
+  config: { }
 ---
 apiVersion: core.platformspec.io/v1alpha1
 kind: Provider
@@ -233,7 +233,7 @@ spec:
   engine: datadog
   credentialRef:
     name: datadog-creds
-  config: {}
+  config: { }
 
 # ===== CI/CD Providers =====
 ---
@@ -246,7 +246,7 @@ spec:
   engine: argocd
   credentialRef:
     name: argocd-creds
-  config: {}
+  config: { }
 
 # ===== Logging Providers =====
 ---
@@ -259,7 +259,7 @@ spec:
   engine: elasticsearch
   credentialRef:
     name: elasticsearch-creds
-  config: {}
+  config: { }
 
 # ===== Auditing Providers =====
 ---
@@ -272,7 +272,7 @@ spec:
   engine: splunk
   credentialRef:
     name: splunk-creds
-  config: {}
+  config: { }
 
 # ===== Automation and Orchestration Providers =====
 ---
@@ -285,7 +285,7 @@ spec:
   engine: terraform-atlantis
   credentialRef:
     name: terraform-atlantis-creds
-  config: {}
+  config: { }
 ---
 apiVersion: core.platformspec.io/v1alpha1
 kind: Provider
@@ -296,7 +296,7 @@ spec:
   engine: ansible
   credentialRef:
     name: ansible-creds
-  config: {}
+  config: { }
 
 
 # ========================================================================
@@ -338,15 +338,15 @@ kind: Network
 metadata:
   name: primary-vpc
 spec:
-  type: vpc 
+  type: vpc
   providerRefs:
     - kind: Provider
-      name: aws 
+      name: aws
   config:
-    cidrBlocks: [10.0.0.0/16]
+    cidrBlocks: [ 10.0.0.0/16 ]
     subnetConfiguration:
-      publicSubnets: ["subnet-id1", "subnet-id2"]
-      privateSubnets: ["subnet-id3", "subnet-id4"]
+      publicSubnets: [ "subnet-id1", "subnet-id2" ]
+      privateSubnets: [ "subnet-id3", "subnet-id4" ]
     tags:
       foo: bar
 
@@ -441,7 +441,7 @@ spec:
     autoscaling: true
     controlPlane:
       instanceType: "t3.medium"
-      machineImageRef: 
+      machineImageRef:
         name: custom-aws-image
       replicas: 3
 
@@ -457,22 +457,22 @@ kind: Server
 metadata:
   name: dev-server-aws
 spec:
-    providerRefs:
-      - kind: Provider
-        name: aws
-      - kind: Provider
-        name: aws-ec2
-    environmentRef:
-      name: development
-      kind: Environment
-    networkRefs:
-      - kind: Network
-        name: primary-vpc
-    region: us-west-2
-    config:
-      size: "t3.medium"
-      machineImageRef:
-        name: custom-aws-image
+  providerRefs:
+    - kind: Provider
+      name: aws
+    - kind: Provider
+      name: aws-ec2
+  environmentRef:
+    name: development
+    kind: Environment
+  networkRefs:
+    - kind: Network
+      name: primary-vpc
+  region: us-west-2
+  config:
+    size: "t3.medium"
+    machineImageRef:
+      name: custom-aws-image
 
 
 

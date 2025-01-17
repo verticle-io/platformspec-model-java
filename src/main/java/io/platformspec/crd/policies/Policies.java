@@ -5,6 +5,7 @@ import io.fabric8.kubernetes.client.CustomResource;
 import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
+import io.platformspec.crd.PlatformResource;
 
 /**
  * The Policies API kind governs the operational and cost-management aspects of the platform. Policies may include logging, scaling, backups, or disaster recovery strategies. This ensures that critical governance and operational practices are well defined and consistently applied.
@@ -13,6 +14,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("pol")
-public class Policies extends CustomResource<Spec, Status> implements Namespaced {
+public class Policies extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

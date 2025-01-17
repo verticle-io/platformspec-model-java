@@ -4,4 +4,4 @@ kind: Portal
 metadata:
   name: backstage
 spec:
-  config: {}
+  config: { }

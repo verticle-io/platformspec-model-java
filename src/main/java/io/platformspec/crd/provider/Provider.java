@@ -5,6 +5,7 @@ import io.fabric8.kubernetes.client.CustomResource;
 import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
+import io.platformspec.crd.PlatformResource;
 
 /**
  * The Provider API kind defines the specific cloud provider or service used for managing infrastructure and platform components within your environment. Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
@@ -13,6 +14,6 @@ import io.fabric8.kubernetes.model.annotation.Version;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("prov")
-public class Provider extends CustomResource<Spec, Status> implements Namespaced {
+public class Provider extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }
