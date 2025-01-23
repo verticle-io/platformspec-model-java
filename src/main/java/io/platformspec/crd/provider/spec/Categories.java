@@ -22,6 +22,7 @@ public enum Categories {
     @JsonProperty("x-custom")
     xCustom,        //	Placeholder for custom provider categories.
 
-    server          // virtual machine
+    server,          // virtual machine
+    repository       // a git repository
 
 }
