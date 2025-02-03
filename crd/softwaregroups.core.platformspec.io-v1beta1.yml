@@ -9,11 +9,11 @@ spec:
     kind: SoftwareGroup
     plural: softwaregroups
     shortNames:
-    - swg
+      - swg
     singular: softwaregroup
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -26,8 +26,8 @@ spec:
                     x-kubernetes-preserve-unknown-fields: true
                   engine:
                     enum:
-                    - docker
-                    - helm
+                      - docker
+                      - helm
                     type: string
                   name:
                     type: string
@@ -39,6 +39,6 @@ spec:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

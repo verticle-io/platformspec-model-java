@@ -9,11 +9,11 @@ spec:
     kind: Policies
     plural: policies
     shortNames:
-    - pol
+      - pol
     singular: policies
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -23,6 +23,6 @@ spec:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

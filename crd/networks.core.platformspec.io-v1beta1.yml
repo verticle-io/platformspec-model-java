@@ -9,11 +9,11 @@ spec:
     kind: Network
     plural: networks
     shortNames:
-    - net
+      - net
     singular: network
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -42,9 +42,9 @@ spec:
               type: array
             type:
               enum:
-              - overlay
-              - vpc
-              - vpn
+                - overlay
+                - vpc
+                - vpn
               type: string
           type: object
           x-kubernetes-preserve-unknown-fields: true
@@ -52,6 +52,6 @@ spec:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

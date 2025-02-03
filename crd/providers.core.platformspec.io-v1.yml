@@ -55,6 +55,7 @@ spec:
                 - "monitoring"
                 - "observability"
                 - "registry"
+                - "repository"
                 - "secrets"
                 - "security"
                 - "server"

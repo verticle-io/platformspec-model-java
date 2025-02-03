@@ -9,11 +9,11 @@ spec:
     kind: Server
     plural: servers
     shortNames:
-    - srv
+      - srv
     singular: server
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -79,15 +79,15 @@ spec:
             region:
               type: string
           required:
-          - environmentRef
-          - providerRefs
-          - region
+            - environmentRef
+            - providerRefs
+            - region
           type: object
           x-kubernetes-preserve-unknown-fields: true
         status:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

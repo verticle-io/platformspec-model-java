@@ -9,11 +9,11 @@ spec:
     kind: Platform
     plural: platforms
     shortNames:
-    - pf
+      - pf
     singular: platform
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -47,8 +47,8 @@ spec:
                       type: string
                   type: object
               required:
-              - domain
-              - providerRef
+                - domain
+                - providerRef
               type: object
             organization:
               type: string
@@ -212,16 +212,16 @@ spec:
             version:
               type: string
           required:
-          - contactEmail
-          - organization
-          - resources
-          - title
-          - version
+            - contactEmail
+            - organization
+            - resources
+            - title
+            - version
           type: object
         status:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

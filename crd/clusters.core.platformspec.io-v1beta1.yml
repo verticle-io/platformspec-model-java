@@ -9,11 +9,11 @@ spec:
     kind: Cluster
     plural: clusters
     shortNames:
-    - cl
+      - cl
     singular: cluster
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -100,16 +100,16 @@ spec:
             version:
               type: string
           required:
-          - environmentRef
-          - providerRefs
-          - region
-          - version
+            - environmentRef
+            - providerRefs
+            - region
+            - version
           type: object
           x-kubernetes-preserve-unknown-fields: true
         status:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true

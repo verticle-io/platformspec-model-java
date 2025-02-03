@@ -5,32 +5,32 @@ metadata:
   name: providers.core.platformspec.io
 spec:
   additionalPrinterColumns:
-  - JSONPath: .spec.category
-    name: category
-    priority: 0
-    type: string
-  - JSONPath: .spec.engine
-    name: engine
-    priority: 0
-    type: string
-  - JSONPath: .status.available
-    name: available
-    priority: 0
-    type: boolean
-  - JSONPath: .status.isProvisioned
-    name: provisioned
-    priority: 0
-    type: boolean
+    - JSONPath: .spec.category
+      name: category
+      priority: 0
+      type: string
+    - JSONPath: .spec.engine
+      name: engine
+      priority: 0
+      type: string
+    - JSONPath: .status.available
+      name: available
+      priority: 0
+      type: boolean
+    - JSONPath: .status.isProvisioned
+      name: provisioned
+      priority: 0
+      type: boolean
   group: core.platformspec.io
   names:
     kind: Provider
     plural: providers
     shortNames:
-    - prov
+      - prov
     singular: provider
   scope: Namespaced
   subresources:
-    status: {}
+    status: { }
   validation:
     openAPIV3Schema:
       properties:
@@ -38,23 +38,23 @@ spec:
           properties:
             category:
               enum:
-              - alerting
-              - auditing
-              - automation
-              - backup
-              - cicd
-              - cluster
-              - dns
-              - iaas
-              - identity
-              - logging
-              - monitoring
-              - observability
-              - registry
-              - secrets
-              - security
-              - server
-              - x-custom
+                - alerting
+                - auditing
+                - automation
+                - backup
+                - cicd
+                - cluster
+                - dns
+                - iaas
+                - identity
+                - logging
+                - monitoring
+                - observability
+                - registry
+                - secrets
+                - security
+                - server
+                - x-custom
               type: string
             config:
               x-kubernetes-preserve-unknown-fields: true
@@ -92,6 +92,6 @@ spec:
           type: object
       type: object
   versions:
-  - name: v1alpha1
-    served: true
-    storage: true
+    - name: v1alpha1
+      served: true
+      storage: true
