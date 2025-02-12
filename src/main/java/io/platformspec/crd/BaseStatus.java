@@ -19,8 +19,11 @@ import java.util.List;
 @NoArgsConstructor
 public abstract class BaseStatus implements PlatformResourceStatus {
 
-    @PrinterColumn(name = "claimed by", priority = 0)
-    ObjectReference claimedBy;
+    @PrinterColumn(name = "Blueprint Claim", priority = 0)
+    ObjectReference claimedByBlueprint;
+
+    @PrinterColumn(name = "Scaffold Claim", priority = 0)
+    ObjectReference claimedByScaffold;
 
     @PreserveUnknownFields
     JsonNode serviceProviderStatus;

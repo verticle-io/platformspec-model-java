@@ -18,8 +18,12 @@ spec:
       name: "selector"
       priority: 0
       type: "string"
-    - jsonPath: ".status.claimedBy"
-      name: "claimed by"
+    - jsonPath: ".status.claimedByBlueprint"
+      name: "Blueprint Claim"
+      priority: 0
+      type: "string"
+    - jsonPath: ".status.claimedByScaffold"
+      name: "Scaffold Claim"
       priority: 0
       type: "string"
     - jsonPath: ".status.provisionedAt"
@@ -64,7 +68,24 @@ spec:
             type: "object"
           status:
             properties:
-              claimedBy:
+              claimedByBlueprint:
+                properties:
+                  apiVersion:
+                    type: "string"
+                  fieldPath:
+                    type: "string"
+                  kind:
+                    type: "string"
+                  name:
+                    type: "string"
+                  namespace:
+                    type: "string"
+                  resourceVersion:
+                    type: "string"
+                  uid:
+                    type: "string"
+                type: "object"
+              claimedByScaffold:
                 properties:
                   apiVersion:
                     type: "string"

@@ -11,9 +11,12 @@ import java.util.List;
  * marker interface for any CustomResource status being used in the PlatformSpec model
  */
 public interface PlatformResourceStatus {
-    ObjectReference getClaimedBy();
+    ObjectReference getClaimedByBlueprint();
 
-    void setClaimedBy(ObjectReference reference);
+    ObjectReference getClaimedByScaffold();
+
+    void setClaimedByBlueprint(ObjectReference reference);
+    void setClaimedByScaffold(ObjectReference reference);
 
     JsonNode getServiceProviderStatus();
 
