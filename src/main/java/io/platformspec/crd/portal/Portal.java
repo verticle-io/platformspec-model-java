@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The Portal API kind in The Platform Specification represents a managed portal deployment.
@@ -14,6 +16,7 @@ import io.platformspec.crd.PlatformResource;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("po")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Portal extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 
 /**
@@ -15,6 +17,7 @@ import io.platformspec.crd.PlatformResource;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("swg")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class SoftwareGroup extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

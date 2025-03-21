@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The Cluster API kind in The Platform Specification represents a managed cluster deployment, encapsulating all necessary configurations to provision and manage your infrastructure within a specific environment.
@@ -14,6 +16,7 @@ import io.platformspec.crd.PlatformResource;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("cl")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Cluster extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

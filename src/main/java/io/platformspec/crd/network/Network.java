@@ -7,6 +7,8 @@ import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
 import io.platformspec.crd.image.Status;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The Network API kind provides a standardized way to define and manage various types of network infrastructures within your platform. Whether it's a traditional VPC, a VPN tunnel, an overlay network, or any other custom connectivity model, this resource encapsulates the essential configurations required for reliable and secure communication across your cloud environments.
@@ -15,6 +17,7 @@ import io.platformspec.crd.image.Status;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("net")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Network extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

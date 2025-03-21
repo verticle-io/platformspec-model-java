@@ -5,10 +5,8 @@ import io.fabric8.generator.annotation.Required;
 import io.platformspec.crd.PlatformResourceSpec;
 import io.platformspec.crd.platform.spec.Dns;
 import io.platformspec.crd.platform.spec.Resources;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
 @AllArgsConstructor
@@ -16,6 +14,7 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Data
 @Jacksonized
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Spec implements PlatformResourceSpec {
 
     @PrinterColumn(name = "selector", priority = 0)

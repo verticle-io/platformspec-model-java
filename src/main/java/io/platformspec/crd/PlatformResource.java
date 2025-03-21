@@ -6,5 +6,7 @@ package io.platformspec.crd;
 public interface PlatformResource {
     PlatformResourceSpec getSpec();
 
-    PlatformResourceStatus getStatus();
+    default PlatformResourceStatus getStatus(){
+        return new DefaultStatus();
+    }
 }

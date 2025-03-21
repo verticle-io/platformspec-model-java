@@ -4,11 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.fabric8.kubernetes.api.model.ObjectReference;
 import io.platformspec.crd.PlatformResourceSpec;
+import io.platformspec.crd.ProviderReferences;
+import io.platformspec.crd.ResourceReferences;
 import io.platformspec.crd.image.spec.spec.Builder;
 import io.platformspec.crd.image.spec.spec.Reference;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
 import java.util.List;
@@ -18,6 +22,7 @@ import java.util.List;
 @lombok.Builder
 @Jacksonized
 @Data
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Spec implements PlatformResourceSpec {
 
     @PrinterColumn(name = "selector", priority = 0)
@@ -26,8 +31,10 @@ public class Spec implements PlatformResourceSpec {
     @JsonProperty("default")
     boolean isDefault;
 
-    List<ObjectReference> providerRefs;
-    List<ObjectReference> environmentRefs;
+    @ProviderReferences
+    public List<ObjectReference> providerRefs;
+    @ResourceReferences
+    public List<ObjectReference> environmentRefs;
     String version;
     Builder builder;
     Reference reference;

@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The Provider API kind defines the specific cloud provider or service used for managing infrastructure and platform components within your environment. Providers offer pre-configured integrations and functionalities tailored to their respective platforms, simplifying deployment and management.
@@ -14,6 +16,7 @@ import io.platformspec.crd.PlatformResource;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("prov")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Provider extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }

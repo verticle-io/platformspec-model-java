@@ -6,10 +6,11 @@ import io.fabric8.crd.generator.annotation.PrinterColumn;
 import io.fabric8.generator.annotation.Required;
 import io.fabric8.kubernetes.api.model.ObjectReference;
 import io.platformspec.crd.PlatformResourceSpec;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import io.platformspec.crd.ProviderReferences;
+import io.platformspec.crd.ResourceReference;
+import io.platformspec.crd.ResourceReferences;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
 import java.util.List;
@@ -19,21 +20,25 @@ import java.util.List;
 @Builder
 @Jacksonized
 @Data
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Spec implements PlatformResourceSpec {
 
     @PrinterColumn(name = "selector", priority = 0)
     protected String labelSelector;
 
     @Required
-    List<ObjectReference> providerRefs;
+    @ProviderReferences
+    public List<ObjectReference> providerRefs;
 
     @Required
-    ObjectReference environmentRef;
+    @ResourceReference
+    public ObjectReference environmentRef;
 
     @Required
     String region;
 
-    List<ObjectReference> networkRefs;
+    @ResourceReferences
+    public List<ObjectReference> networkRefs;
 
     @PreserveUnknownFields
     JsonNode config;

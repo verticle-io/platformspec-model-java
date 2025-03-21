@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.model.annotation.Group;
 import io.fabric8.kubernetes.model.annotation.ShortNames;
 import io.fabric8.kubernetes.model.annotation.Version;
 import io.platformspec.crd.PlatformResource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The Environment API kind in The Platform Specification represents a distinct deployment ecosystems within your platform, such as development, testing, staging, or production. It defines the specific configurations and resources required for deploying and managing applications and services within that particular environment.
@@ -14,6 +16,7 @@ import io.platformspec.crd.PlatformResource;
 @Group("core.platformspec.io")
 @Version("v1alpha1")
 @ShortNames("env")
+@FieldDefaults(level= AccessLevel.PUBLIC)
 public class Environment extends CustomResource<Spec, Status> implements Namespaced, PlatformResource {
 
 }
