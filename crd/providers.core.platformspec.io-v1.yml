@@ -26,18 +26,6 @@ spec:
       name: "selector"
       priority: 0
       type: "string"
-    - jsonPath: ".status.claimedByBlueprint"
-      name: "Blueprint Claim"
-      priority: 0
-      type: "string"
-    - jsonPath: ".status.claimedByScaffold"
-      name: "Scaffold Claim"
-      priority: 0
-      type: "string"
-    - jsonPath: ".status.provisionedAt"
-      name: "provisioned at"
-      priority: 0
-      type: "string"
     name: "v1alpha1"
     schema:
       openAPIV3Schema:
