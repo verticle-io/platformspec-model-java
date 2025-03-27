@@ -5,6 +5,6 @@ import io.fabric8.kubernetes.api.model.Condition;
 public class ProvisionableCondition extends Condition {
 
     public enum Type {
-        provisioning, failed, provisioned, unprovisioned, unprovisioning
+        scheduled, provisioning, provisioning_failed, provisioned, unprovisioned, unprovisioning, unprovisioning_failed
     }
 }
