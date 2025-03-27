@@ -28,6 +28,16 @@ spec:
                 type: "string"
               packages:
                 items:
+                  properties:
+                    config:
+                      x-kubernetes-preserve-unknown-fields: true
+                    engine:
+                      enum:
+                      - "docker"
+                      - "helm"
+                      type: "string"
+                    name:
+                      type: "string"
                   type: "object"
                 type: "array"
             type: "object"

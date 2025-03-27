@@ -38,6 +38,39 @@ spec:
               spec:
                 properties:
                   builder:
+                    properties:
+                      config:
+                        properties:
+                          location:
+                            type: "string"
+                          options:
+                            x-kubernetes-preserve-unknown-fields: true
+                          target:
+                            type: "string"
+                        type: "object"
+                      driver:
+                        type: "string"
+                      software:
+                        properties:
+                          packages:
+                            items:
+                              properties:
+                                name:
+                                  type: "string"
+                                version:
+                                  type: "string"
+                              type: "object"
+                            type: "array"
+                          repos:
+                            items:
+                              properties:
+                                name:
+                                  type: "string"
+                                url:
+                                  type: "string"
+                              type: "object"
+                            type: "array"
+                        type: "object"
                     type: "object"
                   default:
                     type: "boolean"
@@ -82,6 +115,11 @@ spec:
                       type: "object"
                     type: "array"
                   reference:
+                    properties:
+                      id:
+                        type: "string"
+                      location:
+                        type: "string"
                     type: "object"
                   version:
                     type: "string"
